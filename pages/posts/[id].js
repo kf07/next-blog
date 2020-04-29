@@ -1,5 +1,6 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import Date from '../../components/date'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -25,7 +26,7 @@ export default function Post({ postData }) {
       <br />
       {postData.id}
       <br />
-      {postData.data}
+      <Date dateString={postData.date} />
     </Layout>
   )
 }
